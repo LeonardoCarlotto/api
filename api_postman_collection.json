@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "65698529-2640-41e7-810d-1017f6ae5ed1",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5436537"
+	},
+	"item": [
+		{
+			"name": "create-loguin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonardo\",\r\n    \"email\": \"leonardo.carlotto@email.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": [\"ROLE_ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"leonardo.carlotto@email.com\",\r\n    \"username\": \"\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzIyMjI0NSwiZXhwIjoxNjY3MzA4NjQ1fQ.nY0BjgbcKNdqDbd2M6LHt5SBWQrlfcTcA6cCknBprVPt-HkIJLHgQWjuDCZIGpVk-zn-3MmS7_oWZyUS3YCUng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/profile/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"profile",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU4MTExMiwiZXhwIjoxNjY3NjY3NTEyfQ.Nc-2BgJZHoMw0Gn9DPgJP1UlrWgZrBXJ6BHdSYE00HmZtqmE78y8jHmKCclJwCzhsvpSt5IxFQ73YGxZpGP6-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6868/api/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile-reset-pass",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU3MzM0MCwiZXhwIjoxNjY3NTczNDkwfQ.WvMsUwZT7Abgr3vIVwYmZ54L5M4eN2Z1w4iW0Ts6RbFX0eRw819EgEY5hJkAsl2LCfD9scUjERFpqYobs_CaLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirmPassword\": \"a123456\",\r\n    \"password\": \"a123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/profile/resetPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"profile",
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot-pass-page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU3ODk1NiwiZXhwIjoxNjY3NjY1MzU2fQ.58U_4DZVK7qMXd7IqxAKeZQHu9vwTbNwVQmk_mQvApUYml8GcZcaFSQK0p1pbmiLCx5VBpPma6BIez38upPD1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU3ODk1NiwiZXhwIjoxNjY3NjY1MzU2fQ.58U_4DZVK7qMXd7IqxAKeZQHu9vwTbNwVQmk_mQvApUYml8GcZcaFSQK0p1pbmiLCx5VBpPma6BIez38upPD1A\",\r\n    \"confirmPassword\": \"123456789\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/auth/forgotPasswordPage/eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU3MzM0MCwiZXhwIjoxNjY3NTczNDkwfQ.WvMsUwZT7Abgr3vIVwYmZ54L5M4eN2Z1w4iW0Ts6RbFX0eRw819EgEY5hJkAsl2LCfD9scUjERFpqYobs_CaLQ\n",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"auth",
+						"forgotPasswordPage",
+						"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMZW9uYXJkbyIsImlhdCI6MTY2NzU3MzM0MCwiZXhwIjoxNjY3NTczNDkwfQ.WvMsUwZT7Abgr3vIVwYmZ54L5M4eN2Z1w4iW0Ts6RbFX0eRw819EgEY5hJkAsl2LCfD9scUjERFpqYobs_CaLQ\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot-pass",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"carlotto.dias@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/auth/forgotPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"auth",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "works",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDYW1pbGEiLCJpYXQiOjE2Njc0ODQ4OTcsImV4cCI6MTY2NzU3MTI5N30.uoYpFRy2sYcWqmL1vnVjuPBTSP_RTmtDCXNWqL_mU8n-2h3-oqHHvb8ZzsCuXZ8xvgW4u-4SMHxkXPTXvEqhKw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6868/api/profile/works",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"profile",
+						"works"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createWork",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImlhdCI6MTY2NzQ4MzI0MiwiZXhwIjoxNjY3NTY5NjQyfQ.EMNjpv3NLHT4-5YKOcAbmnBDRoOptDmoKSFs1Spi1FTh5CJQmt2hfxN9sgEDsFq4LK-vH65wKUZ5gfU_LOc01w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientName\": \"Camila\",\r\n    \"workName\": \"Ensaio 065\",\r\n    \"status\": \"FINALIZADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/profile/createWork",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"profile",
+						"createWork"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
