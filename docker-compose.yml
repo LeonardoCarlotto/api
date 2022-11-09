@@ -26,7 +26,14 @@ services:
         "spring.datasource.username" : "$MYSQLDB_USER",
         "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"}'
+        "spring.jpa.hibernate.ddl-auto" : "update",
+        "spring.mail.host" : "smtp.gmail.com",
+        "spring.mail.port" : "$MAIL_PORT",
+        "spring.mail.username" : "$MAIL_USER",
+        "spring.mail.password" : "$MAIL_PASS",
+        "spring.mail.properties.mail.smtp.auth" : "true",
+        "spring.mail.properties.mail.smtp.starttls.enable" : "true",
+        "spring.mail.properties.mail.smtp.ssl.enable" : "false"}'
     volumes:
       - .m2:/root/.m2
     stdin_open: true
